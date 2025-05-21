@@ -1,14 +1,13 @@
 """Content enhancement using LLMs."""
 
-from typing import List, Optional
-from .config import LLMConfig
 from ..core.models import Article, ContentBlock, Section
-from .providers import get_llm_client
+from .config import LLMConfig
 from .prompts import get_enhancement_prompt
+from .providers import get_llm_client
 
 
 async def enhance_article(
-    article: Article, config: Optional[LLMConfig] = None
+    article: Article, config: LLMConfig | None = None
 ) -> Article:
     """Enhance an article using LLM.
 

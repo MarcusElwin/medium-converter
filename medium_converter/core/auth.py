@@ -1,10 +1,10 @@
 """Authentication utilities for Medium."""
 
+
 import browser_cookie3
-from typing import Dict, Optional
 
 
-def get_medium_cookies() -> Dict[str, str]:
+def get_medium_cookies() -> dict[str, str]:
     """Extract Medium cookies from the user's browser.
 
     Returns:

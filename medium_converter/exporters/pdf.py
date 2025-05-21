@@ -1,15 +1,16 @@
 """PDF exporter for Medium articles."""
 
-from typing import Optional, Union, BinaryIO
+from typing import BinaryIO
+
+from ..core.models import Article
 from .base import BaseExporter
-from ..core.models import Article, ContentBlock, Section, ContentType
 
 
 class PDFExporter(BaseExporter):
     """Export Medium articles to PDF format."""
 
     def export(
-        self, article: Article, output: Optional[Union[str, BinaryIO]] = None
+        self, article: Article, output: str | BinaryIO | None = None
     ) -> bytes:
         """Export an article to PDF.
 
@@ -21,23 +22,22 @@ class PDFExporter(BaseExporter):
             The exported content as bytes
         """
         try:
+            from io import BytesIO
+
+            from reportlab.lib import colors
             from reportlab.lib.pagesizes import A4
-            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+            from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
             from reportlab.lib.units import inch
             from reportlab.platypus import (
-                SimpleDocTemplate,
                 Paragraph,
+                SimpleDocTemplate,
                 Spacer,
-                Image,
-                Table,
-                TableStyle,
             )
-            from reportlab.lib import colors
-            from io import BytesIO
-        except ImportError:
+        except ImportError as err:
             raise ImportError(
-                "PDF export requires reportlab. Install with 'pip install reportlab' or 'pip install medium-converter[pdf]'"
-            )
+                "PDF export requires reportlab."
+                "Install with 'pip install medium-converter[pdf]'"
+            ) from err
 
         # Create a buffer for the PDF
         buffer = BytesIO()
@@ -53,8 +53,8 @@ class PDFExporter(BaseExporter):
         # Get styles
         styles = getSampleStyleSheet()
         title_style = styles["Title"]
-        heading1_style = styles["Heading1"]
-        heading2_style = styles["Heading2"]
+        styles["Heading1"]
+        styles["Heading2"]
         normal_style = styles["Normal"]
 
         # Create PDF elements

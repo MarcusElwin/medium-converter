@@ -2,8 +2,8 @@
 """Basic usage example for Medium Converter."""
 
 import asyncio
-import sys
 import os
+import sys
 
 # Add the package to path for local testing
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -29,7 +29,7 @@ async def main():
             ),
             ContentBlock(
                 type=ContentType.TEXT,
-                content="Medium Converter allows you to convert Medium articles to various formats.",
+                content="Medium Converter converts articles to various formats.",
             ),
             ContentBlock(
                 type=ContentType.CODE,

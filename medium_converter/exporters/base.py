@@ -1,7 +1,8 @@
 """Base exporter for Medium articles."""
 
 from abc import ABC, abstractmethod
-from typing import Optional, BinaryIO, Union, TextIO
+from typing import BinaryIO, TextIO
+
 from ..core.models import Article
 
 
@@ -10,8 +11,8 @@ class BaseExporter(ABC):
 
     @abstractmethod
     def export(
-        self, article: Article, output: Optional[Union[str, TextIO, BinaryIO]] = None
-    ) -> Union[str, bytes]:
+        self, article: Article, output: str | TextIO | BinaryIO | None = None
+    ) -> str | bytes:
         """Export an article to the target format.
 
         Args:

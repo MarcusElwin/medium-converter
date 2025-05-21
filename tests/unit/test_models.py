@@ -1,7 +1,6 @@
 """Tests for the data models."""
 
-import pytest
-from medium_converter.core.models import Article, Section, ContentBlock, ContentType
+from medium_converter.core.models import ContentBlock, ContentType, Section
 
 
 def test_content_block_creation():

@@ -1,7 +1,8 @@
 """LLM configuration for Medium Converter."""
 
 from enum import Enum
-from typing import Optional, Dict, Any, Union
+from typing import Any
+
 from pydantic import BaseModel, Field
 
 
@@ -21,14 +22,14 @@ class LLMConfig(BaseModel):
 
     provider: LLMProvider = LLMProvider.OPENAI
     model: str = "gpt-3.5-turbo"
-    api_key: Optional[str] = None
+    api_key: str | None = None
     temperature: float = 0.7
-    max_tokens: Optional[int] = None
+    max_tokens: int | None = None
     top_p: float = 1.0
-    top_k: Optional[int] = None
+    top_k: int | None = None
     stop_sequences: list[str] = Field(default_factory=list)
     timeout: int = 60
-    extra_params: Dict[str, Any] = Field(default_factory=dict)
+    extra_params: dict[str, Any] = Field(default_factory=dict)
 
     @classmethod
     def from_env(cls) -> "LLMConfig":

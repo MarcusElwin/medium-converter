@@ -1,9 +1,10 @@
 """Data models for Medium Converter."""
 
-from enum import Enum
-from typing import List, Optional, Dict, Any, Union
-from pydantic import BaseModel, Field
 from datetime import datetime
+from enum import Enum
+from typing import Any
+
+from pydantic import BaseModel, Field
 
 
 class ContentType(str, Enum):
@@ -22,14 +23,14 @@ class ContentBlock(BaseModel):
 
     type: ContentType
     content: str
-    metadata: Dict[str, Any] = Field(default_factory=dict)
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class Section(BaseModel):
     """A section of a Medium article."""
 
-    title: Optional[str] = None
-    blocks: List[ContentBlock] = Field(default_factory=list)
+    title: str | None = None
+    blocks: list[ContentBlock] = Field(default_factory=list)
 
 
 class Article(BaseModel):
@@ -37,8 +38,8 @@ class Article(BaseModel):
 
     title: str
     author: str
-    date: Union[str, datetime]
-    content: List[Union[Section, ContentBlock]] = Field(default_factory=list)
-    estimated_reading_time: Optional[int] = None
-    url: Optional[str] = None
-    tags: List[str] = Field(default_factory=list)
+    date: str | datetime
+    content: list[Section | ContentBlock] = Field(default_factory=list)
+    estimated_reading_time: int | None = None
+    url: str | None = None
+    tags: list[str] = Field(default_factory=list)

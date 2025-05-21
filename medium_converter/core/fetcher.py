@@ -1,10 +1,10 @@
 """Async HTTP client for fetching Medium articles."""
 
+
 import httpx
-from typing import Dict, Optional
 
 
-async def fetch_article(url: str, cookies: Optional[Dict[str, str]] = None) -> str:
+async def fetch_article(url: str, cookies: dict[str, str] | None = None) -> str:
     """Fetch a Medium article's HTML content.
 
     Args:

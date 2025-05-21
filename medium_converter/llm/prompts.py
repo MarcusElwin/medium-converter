@@ -1,6 +1,5 @@
 """Prompts for LLM enhancement."""
 
-from typing import Optional
 
 
 def get_enhancement_prompt(
@@ -18,7 +17,9 @@ def get_enhancement_prompt(
     Returns:
         Prompt string for the LLM
     """
-    return f"""You are a world-class editor and writer. Your task is to enhance the following text from an article titled "{article_title}" while preserving its meaning and intent. This text is part of the {context}.
+    return f"""You are a world-class editor. Your task is to enhance the following text 
+from article "{article_title}" while preserving its meaning and intent. 
+Part: {context}.
 
 THE TEXT TO ENHANCE:
 {text}

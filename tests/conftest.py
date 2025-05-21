@@ -1,7 +1,8 @@
 """Test fixtures for Medium Converter."""
 
 import pytest
-from medium_converter.core.models import Article, Section, ContentBlock, ContentType
+
+from medium_converter.core.models import Article, ContentBlock, ContentType, Section
 
 
 @pytest.fixture

@@ -1,11 +1,11 @@
 """Tests for helper functions."""
 
 import os
-import pytest
+
 from medium_converter.utils.helpers import (
+    get_default_output_path,
     normalize_medium_url,
     safe_filename,
-    get_default_output_path,
 )
 
 

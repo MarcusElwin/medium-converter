@@ -1,7 +1,7 @@
 """LLM provider clients."""
 
 from abc import ABC, abstractmethod
-from typing import Optional, Dict, Any
+
 from .config import LLMConfig, LLMProvider
 
 
@@ -42,11 +42,13 @@ class OpenAIClient(LLMClient):
             Generated text
         """
         try:
-            import openai
-        except ImportError:
+            # Only checking if importable
+            __import__("openai")
+        except ImportError as err:
             raise ImportError(
-                "OpenAI support requires the openai package. Install with 'pip install openai' or 'pip install medium-converter[openai]'"
-            )
+                "OpenAI support requires the openai package."
+                "Install with 'pip install medium-converter[openai]'"
+            ) from err
 
         # Placeholder for real implementation
         return f"Enhanced with OpenAI: {prompt[:50]}..."
@@ -65,11 +67,13 @@ class AnthropicClient(LLMClient):
             Generated text
         """
         try:
-            import anthropic
-        except ImportError:
+            # Only checking if importable
+            __import__("anthropic")
+        except ImportError as err:
             raise ImportError(
-                "Anthropic support requires the anthropic package. Install with 'pip install anthropic' or 'pip install medium-converter[anthropic]'"
-            )
+                "Anthropic support requires the anthropic package."
+                "Install with 'pip install medium-converter[anthropic]'"
+            ) from err
 
         # Placeholder for real implementation
         return f"Enhanced with Anthropic: {prompt[:50]}..."
@@ -88,11 +92,13 @@ class GoogleClient(LLMClient):
             Generated text
         """
         try:
-            import google.generativeai as genai
-        except ImportError:
+            # Only checking if importable
+            __import__("google.generativeai")
+        except ImportError as err:
             raise ImportError(
-                "Google support requires the google-generativeai package. Install with 'pip install google-generativeai' or 'pip install medium-converter[google]'"
-            )
+                "Google support requires google-generativeai."
+                "Install with 'pip install medium-converter[google]'"
+            ) from err
 
         # Placeholder for real implementation
         return f"Enhanced with Google: {prompt[:50]}..."
@@ -111,11 +117,13 @@ class LiteLLMClient(LLMClient):
             Generated text
         """
         try:
-            import litellm
-        except ImportError:
+            # Only checking if importable
+            __import__("litellm")
+        except ImportError as err:
             raise ImportError(
-                "LiteLLM support requires the litellm package. Install with 'pip install litellm' or 'pip install medium-converter[llm]'"
-            )
+                "LiteLLM support requires the litellm package."
+                "Install with 'pip install medium-converter[llm]'"
+            ) from err
 
         # Placeholder for real implementation
         return f"Enhanced with LiteLLM: {prompt[:50]}..."
@@ -132,8 +140,8 @@ def get_llm_client(config: LLMConfig) -> LLMClient:
     """
     # Always use LiteLLM if available
     try:
-        import litellm
-
+        # We only need to check if litellm is importable
+        __import__("litellm")
         return LiteLLMClient(config)
     except ImportError:
         pass

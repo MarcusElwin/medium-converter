@@ -1,8 +1,8 @@
 """HTML Parser for Medium articles."""
 
-from typing import Dict, List, Optional
 from bs4 import BeautifulSoup
-from .models import Article, Section, ContentBlock
+
+from .models import Article
 
 
 def parse_article(html: str) -> Article:
@@ -14,7 +14,7 @@ def parse_article(html: str) -> Article:
     Returns:
         Structured Article object
     """
-    soup = BeautifulSoup(html, "lxml")
+    BeautifulSoup(html, "lxml")
     # Placeholder implementation
     return Article(
         title="Sample Article Title",

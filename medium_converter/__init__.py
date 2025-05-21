@@ -1,4 +1,4 @@
-"""Medium Converter - Convert Medium articles to various formats with LLM enhancement."""
+"""Medium Converter - Convert articles to various formats with LLM enhancement."""
 
 import importlib.metadata
 

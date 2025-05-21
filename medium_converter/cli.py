@@ -1,27 +1,25 @@
 """Command-line interface for Medium Converter."""
 
 import importlib.metadata
+import random
 import sys
 import time
-import random
-from typing import Optional, List
 
 import click
+from rich import box
 from rich.console import Console
+from rich.markdown import Markdown
 from rich.panel import Panel
-from rich.table import Table
 from rich.progress import (
+    BarColumn,
     Progress,
     SpinnerColumn,
     TextColumn,
-    BarColumn,
     TimeElapsedColumn,
 )
-from rich.markdown import Markdown
-from rich.theme import Theme
-from rich import box
-from rich.style import Style
+from rich.table import Table
 from rich.text import Text
+from rich.theme import Theme
 
 # Create a custom theme with more vibrant colors
 custom_theme = Theme(
@@ -50,12 +48,12 @@ console = Console(theme=custom_theme, highlight=True)
 def print_banner():
     """Print a fancy banner for the CLI."""
     banner = """
-    ╭────────────────────────────────────────────────────────╮
-    │                                                        │
-    │   [bold bright_magenta]🔄 Medium Converter[/bold bright_magenta]                             │
-    │   [italic bright_cyan]✨ Convert Medium articles to various formats ✨[/italic bright_cyan]   │
-    │                                                        │
-    ╰────────────────────────────────────────────────────────╯
+    ╭─────────────────────────────────────────────────────╮
+    │                                                     │
+    │   [bold bright_magenta]🔄 Medium Converter[/bold bright_magenta]                │
+    │   [italic bright_cyan]✨ Convert articles ✨[/italic bright_cyan]                │
+    │                                                     │
+    ╰─────────────────────────────────────────────────────╯
     """
     console.print(banner)
 
@@ -120,7 +118,7 @@ def convert(
     Examples:
         medium convert https://medium.com/example-article
         medium convert https://medium.com/example-article -f pdf -o article.pdf
-        medium convert https://medium.com/example-article --enhance --llm-provider openai
+        medium convert https://medium.com/example -enhance
     """
     # Show a fancy panel with the conversion info
     info_table = Table.grid(padding=1)
@@ -156,15 +154,17 @@ def convert(
     else:
         info_table.add_row("🧠 Enhancement:", "[subtle]Disabled[/subtle]")
 
+    cookie_status = "Enabled" if use_cookies else "Disabled"
+    cookie_style = "success" if use_cookies else "subtle"
     info_table.add_row(
         "🍪 Use Cookies:",
-        f"[{'success' if use_cookies else 'subtle'}]{'Enabled' if use_cookies else 'Disabled'}[/{'success' if use_cookies else 'subtle'}]",
+        f"[{cookie_style}]{cookie_status}[/{cookie_style}]",
     )
 
     # Fancy borders and colors
     panel = Panel(
         info_table,
-        title=f"[title]🔄 Medium Converter[/title]",
+        title="[title]🔄 Medium Converter[/title]",
         subtitle="[info]Converting Article...[/info]",
         border_style="bright_blue",
         box=box.ROUNDED,
@@ -214,7 +214,7 @@ def convert(
     # Print placeholder for now
     console.print(
         Panel(
-            "[italic bright_cyan]Article conversion will be implemented in future versions.[/italic bright_cyan]",
+            "[italic bright_cyan]Coming soon![/italic bright_cyan]",
             title="[success]✅ Status[/success]",
             border_style="bright_green",
             box=box.ROUNDED,
@@ -274,7 +274,7 @@ def batch(file, format, output_dir, enhance, concurrent, use_cookies, llm_provid
     )
 
     # Placeholder code to read URLs
-    with open(file, "r") as f:
+    with open(file) as f:
         urls = [line.strip() for line in f if line.strip()]
 
     console.print(f"Found [highlight]🔍 {len(urls)}[/highlight] URLs to process")
@@ -294,7 +294,7 @@ def batch(file, format, output_dir, enhance, concurrent, use_cookies, llm_provid
 
     console.print(
         Panel(
-            "[italic bright_cyan]Batch conversion will be implemented in future versions.[/italic bright_cyan]",
+            "[italic bright_cyan]Coming soon![/italic bright_cyan]",
             title="[info]ℹ️ Status[/info]",
             border_style="bright_blue",
             box=box.ROUNDED,
@@ -335,30 +335,38 @@ def config_cmd(action, key, value):
 
         console.print(config_table)
     elif action == "set" and key and value:
+        # Split into two lines to avoid line length issues
+        text = Text()
+        text.append("✅ Set ", style="success")
+        text.append(key, style="accent")
+        text.append(" to ", style="default")
+        text.append(value, style="highlight")
+        console.print(text)
         console.print(
-            f"[success]✅ Setting[/success] [accent]{key}[/accent] to [highlight]{value}[/highlight]"
-        )
-        console.print(
-            "[italic bright_cyan]Configuration management will be implemented in future versions.[/italic bright_cyan]"
+            "[italic bright_cyan]Configuration coming soon.[/italic bright_cyan]"
         )
     elif action == "get" and key:
+        # Split into two lines to avoid line length issues
+        text = Text()
+        text.append("🔍 Value ", style="info")
+        text.append(key, style="accent")
+        text.append(": ", style="default")
+        text.append("example_value", style="highlight")
+        console.print(text)
         console.print(
-            f"[info]🔍 Value for[/info] [accent]{key}[/accent]: [highlight]example_value[/highlight]"
-        )
-        console.print(
-            "[italic bright_cyan]Configuration management will be implemented in future versions.[/italic bright_cyan]"
+            "[italic bright_cyan]Configuration coming soon.[/italic bright_cyan]"
         )
     elif action == "reset":
         console.print(
-            "[warning]⚠️ Are you sure you want to reset all settings to defaults?[/warning]"
+            "[warning]⚠️ Reset all settings to defaults?[/warning]"
         )
         console.print(
-            "[italic bright_cyan]Configuration management will be implemented in future versions.[/italic bright_cyan]"
+            "[italic bright_cyan]Configuration coming soon.[/italic bright_cyan]"
         )
     else:
         console.print(
             Panel(
-                "[italic bright_cyan]Configuration management will be implemented in future versions.[/italic bright_cyan]",
+                "[italic bright_cyan]Configuration coming soon.[/italic bright_cyan]",
                 title="[info]ℹ️ Status[/info]",
                 border_style="bright_blue",
                 box=box.ROUNDED,
@@ -452,8 +460,8 @@ def list_providers():
 @main.command()
 def info():
     """Display system information and environment details."""
-    import platform
     import os
+    import platform
 
     info_table = Table(
         title="🖥️ System Information",
@@ -571,7 +579,7 @@ def random_tip():
     tips = [
         "💡 Use the --enhance flag to improve article quality with AI.",
         "💡 Export to PDF for the best print quality.",
-        "💡 Using --use-cookies allows access to member-only articles if you're logged in.",
+        "💡 Using --use-cookies allows access to member-only articles.",
         "💡 Batch convert multiple articles with the 'batch' command.",
         "💡 Try different LLM providers to see which gives the best enhancements.",
         "💡 The HTML format preserves most of the original article styling.",

@@ -1,15 +1,16 @@
 """Markdown exporter for Medium articles."""
 
-from typing import Optional, Union, TextIO
+from typing import TextIO
+
+from ..core.models import Article, ContentBlock, ContentType, Section
 from .base import BaseExporter
-from ..core.models import Article, ContentBlock, Section, ContentType
 
 
 class MarkdownExporter(BaseExporter):
     """Export Medium articles to Markdown format."""
 
     def export(
-        self, article: Article, output: Optional[Union[str, TextIO]] = None
+        self, article: Article, output: str | TextIO | None = None
     ) -> str:
         """Export an article to Markdown.
 
