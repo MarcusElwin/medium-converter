@@ -4,6 +4,8 @@ on:
     secrets:
       GITHUB_TOKEN:
         required: true
+      PYPI_API_TOKEN:
+        required: true
     outputs:
       published:
         value: ${{ jobs.release.outputs.published }}
@@ -34,3 +36,4 @@ jobs:
         id: semantic
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          pypi_token: ${{ secrets.PYPI_API_TOKEN }}
