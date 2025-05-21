@@ -1,6 +1,6 @@
 """PDF exporter for Medium articles."""
 
-from typing import BinaryIO
+from typing import BinaryIO, TextIO
 
 from ..core.models import Article
 from .base import BaseExporter
@@ -9,7 +9,9 @@ from .base import BaseExporter
 class PDFExporter(BaseExporter):
     """Export Medium articles to PDF format."""
 
-    def export(self, article: Article, output: str | BinaryIO | None = None) -> bytes:
+    def export(
+        self, article: Article, output: str | TextIO | BinaryIO | None = None
+    ) -> bytes:
         """Export an article to PDF.
 
         Args:
@@ -22,6 +24,7 @@ class PDFExporter(BaseExporter):
         try:
             from io import BytesIO
 
+            # reportlab imports
             from reportlab.lib import colors
             from reportlab.lib.pagesizes import A4
             from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet

@@ -1,6 +1,6 @@
 """Markdown exporter for Medium articles."""
 
-from typing import TextIO
+from typing import BinaryIO, TextIO
 
 from ..core.models import Article, ContentBlock, ContentType, Section
 from .base import BaseExporter
@@ -9,7 +9,9 @@ from .base import BaseExporter
 class MarkdownExporter(BaseExporter):
     """Export Medium articles to Markdown format."""
 
-    def export(self, article: Article, output: str | TextIO | None = None) -> str:
+    def export(
+        self, article: Article, output: str | TextIO | BinaryIO | None = None
+    ) -> str:
         """Export an article to Markdown.
 
         Args:
@@ -46,7 +48,13 @@ class MarkdownExporter(BaseExporter):
                 with open(output, "w", encoding="utf-8") as f:
                     f.write(md_content)
             else:
-                output.write(md_content)
+                # We need to check the type to avoid mypy errors
+                if hasattr(output, 'write') and callable(output.write):
+                    if isinstance(output, BinaryIO):
+                        output.write(md_content.encode('utf-8'))
+                    else:
+                        # Assume TextIO
+                        output.write(md_content)
 
         return md_content
 

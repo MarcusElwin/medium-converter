@@ -38,9 +38,10 @@ async def enhance_article(article: Article, config: LLMConfig | None = None) -> 
 
                     try:
                         enhanced_text = await llm.generate(prompt)
-                        enhanced_article.content[item_index].blocks[
-                            block_index
-                        ].content = enhanced_text
+                        # Use a type check to satisfy mypy
+                        content_item = enhanced_article.content[item_index]
+                        if isinstance(content_item, Section):
+                            content_item.blocks[block_index].content = enhanced_text
                     except Exception as e:
                         # Log error but continue with original content
                         print(f"Error enhancing content: {e}")
@@ -52,7 +53,10 @@ async def enhance_article(article: Article, config: LLMConfig | None = None) -> 
 
             try:
                 enhanced_text = await llm.generate(prompt)
-                enhanced_article.content[item_index].content = enhanced_text
+                # Use a type check to satisfy mypy
+                content_item = enhanced_article.content[item_index]
+                if isinstance(content_item, ContentBlock):
+                    content_item.content = enhanced_text
             except Exception as e:
                 # Log error but continue with original content
                 print(f"Error enhancing content: {e}")

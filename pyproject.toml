@@ -53,6 +53,7 @@ ebooklib = {version = ">=0.18.0", optional = true}
 # Fast
 # medium-converter-rust dependency commented out until it's available
 # medium-converter-rust = {version = ">=0.1.0", optional = true}
+types-setuptools = "^80.8.0.20250521"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.0.0"
@@ -115,6 +116,11 @@ strict = true
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
+
+# Ignore specific libraries without stubs
+[[tool.mypy.overrides]]
+module = ["reportlab.*", "browser_cookie3", "pkg_resources"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 minversion = "7.0"

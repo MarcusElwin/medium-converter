@@ -45,7 +45,7 @@ except importlib.metadata.PackageNotFoundError:
 console = Console(theme=custom_theme, highlight=True)
 
 
-def print_banner():
+def print_banner() -> None:
     """Print a fancy banner for the CLI."""
     banner = """
     ╭─────────────────────────────────────────────────────╮
@@ -61,7 +61,7 @@ def print_banner():
 @click.group(invoke_without_command=True)
 @click.option("--version", is_flag=True, help="Show the version and exit.")
 @click.pass_context
-def main(ctx, version):
+def main(ctx: click.Context, version: bool) -> None:
     """Convert Medium articles to various formats with LLM enhancement.
 
     Medium Converter allows you to download and convert Medium articles to
@@ -111,8 +111,15 @@ def main(ctx, version):
 )
 @click.option("--verbose", "-v", is_flag=True, help="Enable verbose output")
 def convert(
-    url, format, output, output_dir, enhance, use_cookies, llm_provider, verbose
-):
+    url: str,
+    format: str,
+    output: str | None,
+    output_dir: str | None,
+    enhance: bool,
+    use_cookies: bool,
+    llm_provider: str | None,
+    verbose: bool
+) -> None:
     """Convert a Medium article to the specified format.
 
     Examples:
@@ -255,7 +262,15 @@ def convert(
     ),
     help="LLM provider to use for enhancement",
 )
-def batch(file, format, output_dir, enhance, concurrent, use_cookies, llm_provider):
+def batch(
+    file: str,
+    format: str,
+    output_dir: str,
+    enhance: bool,
+    concurrent: int,
+    use_cookies: bool,
+    llm_provider: str | None
+) -> None:
     """Convert multiple Medium articles listed in a file.
 
     The input file should contain one Medium URL per line.
@@ -306,7 +321,7 @@ def batch(file, format, output_dir, enhance, concurrent, use_cookies, llm_provid
 @click.argument("action", type=click.Choice(["show", "set", "get", "reset"]))
 @click.argument("key", required=False)
 @click.argument("value", required=False)
-def config_cmd(action, key, value):
+def config_cmd(action: str, key: str | None, value: str | None) -> None:
     """Manage configuration settings.
 
     Examples:
@@ -373,7 +388,7 @@ def config_cmd(action, key, value):
 
 
 @main.command()
-def list_formats():
+def list_formats() -> None:
     """List all available export formats with details."""
     formats_table = Table(
         title="📊 Available Export Formats",
@@ -410,7 +425,7 @@ def list_formats():
 
 
 @main.command()
-def list_providers():
+def list_providers() -> None:
     """List all available LLM providers with details."""
     providers_table = Table(
         title="🧠 Available LLM Providers",
@@ -456,7 +471,7 @@ def list_providers():
 
 
 @main.command()
-def info():
+def info() -> None:
     """Display system information and environment details."""
     import os
     import platform
@@ -493,7 +508,7 @@ def info():
 
     # Show Python packages
     try:
-        import pkg_resources
+        import pkg_resources  # Already installed type stubs for this
 
         packages = [
             (dist.key, dist.version)
@@ -530,7 +545,7 @@ def info():
 
 
 @main.command()
-def examples():
+def examples() -> None:
     """Show example usage of Medium Converter."""
     examples_md = """
     # 📚 Examples
@@ -572,7 +587,7 @@ def examples():
 
 
 @main.command()
-def random_tip():
+def random_tip() -> None:
     """Display a random tip about Medium Converter."""
     tips = [
         "💡 Use the --enhance flag to improve article quality with AI.",
