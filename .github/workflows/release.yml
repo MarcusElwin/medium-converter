@@ -9,7 +9,7 @@ jobs:
   semantic-release:
     uses: ./.github/workflows/semver.yml
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DEP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
 
   publish:
