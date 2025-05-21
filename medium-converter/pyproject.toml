@@ -124,3 +124,12 @@ addopts = [
 ]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+
+[tool.semantic_release]
+version_variable = [
+    "medium_converter/__init__.py:__version__"
+]
+branch = "main"
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
