@@ -3807,6 +3807,7 @@ all = ["anthropic", "ebooklib", "google-generativeai", "jinja2", "litellm", "lla
 all-formats = ["ebooklib", "jinja2", "python-docx", "reportlab"]
 all-llm = ["anthropic", "google-generativeai", "litellm", "llama-cpp-python", "mistralai", "openai", "tiktoken"]
 anthropic = ["anthropic"]
+docs = []
 epub = ["ebooklib"]
 fast = []
 google = ["google-generativeai"]
@@ -3822,4 +3823,4 @@ word = ["python-docx"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<4.0"
-content-hash = "5ab7af5f59bc7581c348a0de7743f0441d141f6ee2354b8db95c9e86c3e72930"
+content-hash = "7302c39e55715048d286ce79d6271f1ddba158b4beb9fd9e694b49bc8ebfbe8f"
