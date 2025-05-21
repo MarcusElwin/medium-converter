@@ -4,17 +4,17 @@ from typing import Optional
 
 
 def get_enhancement_prompt(
-    text: str, 
+    text: str,
     article_title: str,
     context: str = "article text",
 ) -> str:
     """Get a prompt for enhancing article text.
-    
+
     Args:
         text: The text to enhance
         article_title: The title of the article
         context: What part of the article this text is from
-        
+
     Returns:
         Prompt string for the LLM
     """

@@ -8,7 +8,7 @@ from datetime import datetime
 
 class ContentType(str, Enum):
     """Types of content blocks in Medium articles."""
-    
+
     TEXT = "text"
     IMAGE = "image"
     CODE = "code"
@@ -19,7 +19,7 @@ class ContentType(str, Enum):
 
 class ContentBlock(BaseModel):
     """A block of content in a Medium article."""
-    
+
     type: ContentType
     content: str
     metadata: Dict[str, Any] = Field(default_factory=dict)
@@ -27,14 +27,14 @@ class ContentBlock(BaseModel):
 
 class Section(BaseModel):
     """A section of a Medium article."""
-    
+
     title: Optional[str] = None
     blocks: List[ContentBlock] = Field(default_factory=list)
 
 
 class Article(BaseModel):
     """A Medium article."""
-    
+
     title: str
     author: str
     date: Union[str, datetime]

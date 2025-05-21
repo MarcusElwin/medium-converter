@@ -14,12 +14,12 @@ def parse_article(html: str) -> Article:
     Returns:
         Structured Article object
     """
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, "lxml")
     # Placeholder implementation
     return Article(
         title="Sample Article Title",
         author="Sample Author",
         date="2023-01-01",
         content=[],
-        estimated_reading_time=5
+        estimated_reading_time=5,
     )

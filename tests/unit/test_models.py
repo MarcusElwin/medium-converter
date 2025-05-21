@@ -6,11 +6,8 @@ from medium_converter.core.models import Article, Section, ContentBlock, Content
 
 def test_content_block_creation():
     """Test creating a ContentBlock."""
-    block = ContentBlock(
-        type=ContentType.TEXT,
-        content="Sample text"
-    )
-    
+    block = ContentBlock(type=ContentType.TEXT, content="Sample text")
+
     assert block.type == ContentType.TEXT
     assert block.content == "Sample text"
     assert block.metadata == {}
@@ -18,16 +15,10 @@ def test_content_block_creation():
 
 def test_section_creation():
     """Test creating a Section."""
-    block = ContentBlock(
-        type=ContentType.TEXT,
-        content="Sample text"
-    )
-    
-    section = Section(
-        title="Sample Section",
-        blocks=[block]
-    )
-    
+    block = ContentBlock(type=ContentType.TEXT, content="Sample text")
+
+    section = Section(title="Sample Section", blocks=[block])
+
     assert section.title == "Sample Section"
     assert len(section.blocks) == 1
     assert section.blocks[0].content == "Sample text"
