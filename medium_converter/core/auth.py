@@ -1,6 +1,5 @@
 """Authentication utilities for Medium."""
 
-
 import browser_cookie3
 
 

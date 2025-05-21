@@ -9,9 +9,7 @@ from .base import BaseExporter
 class PDFExporter(BaseExporter):
     """Export Medium articles to PDF format."""
 
-    def export(
-        self, article: Article, output: str | BinaryIO | None = None
-    ) -> bytes:
+    def export(self, article: Article, output: str | BinaryIO | None = None) -> bytes:
         """Export an article to PDF.
 
         Args:

@@ -1,7 +1,6 @@
 """Prompts for LLM enhancement."""
 
 
-
 def get_enhancement_prompt(
     text: str,
     article_title: str,

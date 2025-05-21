@@ -357,9 +357,7 @@ def config_cmd(action, key, value):
             "[italic bright_cyan]Configuration coming soon.[/italic bright_cyan]"
         )
     elif action == "reset":
-        console.print(
-            "[warning]⚠️ Reset all settings to defaults?[/warning]"
-        )
+        console.print("[warning]⚠️ Reset all settings to defaults?[/warning]")
         console.print(
             "[italic bright_cyan]Configuration coming soon.[/italic bright_cyan]"
         )

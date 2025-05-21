@@ -1,6 +1,5 @@
 """Async HTTP client for fetching Medium articles."""
 
-
 import httpx
 
 

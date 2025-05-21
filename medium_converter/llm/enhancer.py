@@ -6,9 +6,7 @@ from .prompts import get_enhancement_prompt
 from .providers import get_llm_client
 
 
-async def enhance_article(
-    article: Article, config: LLMConfig | None = None
-) -> Article:
+async def enhance_article(article: Article, config: LLMConfig | None = None) -> Article:
     """Enhance an article using LLM.
 
     Args:

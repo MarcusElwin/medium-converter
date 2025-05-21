@@ -9,9 +9,7 @@ from .base import BaseExporter
 class MarkdownExporter(BaseExporter):
     """Export Medium articles to Markdown format."""
 
-    def export(
-        self, article: Article, output: str | TextIO | None = None
-    ) -> str:
+    def export(self, article: Article, output: str | TextIO | None = None) -> str:
         """Export an article to Markdown.
 
         Args:
