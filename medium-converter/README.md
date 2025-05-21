@@ -9,11 +9,11 @@
 
 ## Features
 
-- =� **Multiple export formats**: Markdown, PDF, HTML, LaTeX, EPUB, DOCX
-- > **LLM enhancement**: Improve clarity and fix grammar with AI
-- = **Paywall access**: Use your browser cookies to access articles behind the paywall
-- <� **Custom styling**: Customize the output appearance
-- � **Async processing**: Efficient batch conversion
+- 📚 **Multiple export formats**: Markdown, PDF, HTML, LaTeX, EPUB, DOCX
+- 🤖 **LLM enhancement**: Improve clarity and fix grammar with AI
+- 🔓 **Paywall access**: Use your browser cookies to access articles behind the paywall
+- 🎨 **Custom styling**: Customize the output appearance
+- ⚡ **Async processing**: Efficient batch conversion
 
 ## Installation
 
@@ -69,6 +69,90 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+## Development Guide
+
+### Prerequisites
+
+- Python 3.11+
+- [Poetry](https://python-poetry.org/docs/#installation) for dependency management
+
+### Setting Up Development Environment
+
+```bash
+# Clone the repository
+git clone https://github.com/MarcusElwin/medium-converter.git
+cd medium-converter
+
+# Install dependencies with Poetry
+poetry install --all-extras
+
+# Activate virtual environment
+poetry shell
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=medium_converter
+```
+
+### Code Quality
+
+```bash
+# Run type checking
+mypy medium_converter
+
+# Run linting
+ruff medium_converter
+
+# Format code
+black medium_converter
+```
+
+### Building Documentation
+
+```bash
+# Build documentation
+mkdocs build
+
+# Serve documentation locally
+mkdocs serve
+```
+
+## Project Structure
+
+```
+medium-converter/
+├── medium_converter/       # Main package
+│   ├── __init__.py         # Public API & version
+│   ├── cli.py              # CLI interface
+│   ├── core/               # Core functionality
+│   ├── exporters/          # Export formats
+│   ├── llm/                # LLM integration
+│   └── utils/              # Utilities
+├── tests/                  # Test suite
+├── docs/                   # Documentation
+├── examples/               # Example scripts
+├── pyproject.toml          # Project configuration
+└── README.md               # Project readme
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+See [Contributing Guide](https://medium-converter.readthedocs.io/en/latest/contributing/development/) for more details.
+
 ## Documentation
 
 For detailed documentation, visit [medium-converter.readthedocs.io](https://medium-converter.readthedocs.io/).
@@ -86,20 +170,3 @@ Medium Converter supports multiple LLM providers for content enhancement:
 ## License
 
 MIT License - See [LICENSE](LICENSE) for details.
-
-## Development
-
-```bash
-# Clone the repository
-git clone https://github.com/MarcusElwin/medium-converter.git
-cd medium-converter
-
-# Install development dependencies
-poetry install --all-extras
-
-# Run tests
-poetry run pytest
-
-# Build documentation
-poetry run mkdocs build
-```
