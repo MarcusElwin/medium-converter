@@ -1,0 +1,119 @@
+site_name: Medium Converter
+site_description: Convert Medium articles to various formats with LLM enhancement
+site_url: https://medium-converter.readthedocs.io
+repo_url: https://github.com/MarcusElwin/medium-converter
+repo_name: MarcusElwin/medium-converter
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  
+  icon:
+    repo: fontawesome/brands/github
+
+# Extensions for enhanced content
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+# Plugins for extended functionality
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_root_heading: true
+            heading_level: 2
+            show_source: true
+            merge_init_into_class: true
+            docstring_section_style: spacy
+
+# Documentation structure
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Configuration: getting-started/configuration.md
+  - User Guide:
+    - CLI Usage: user-guide/cli.md
+    - Python API: user-guide/python-api.md
+    - Authentication: user-guide/auth.md
+    - Export Formats:
+      - Markdown: user-guide/formats/markdown.md
+      - PDF: user-guide/formats/pdf.md
+      - Other Formats: user-guide/formats/other-formats.md
+    - LLM Enhancement:
+      - Overview: user-guide/llm/overview.md
+      - Providers: user-guide/llm/providers.md
+      - Self-Hosted: user-guide/llm/self-hosted.md
+  - Advanced:
+    - Batch Processing: advanced/batch-processing.md
+    - Performance: advanced/performance.md
+    - Troubleshooting: advanced/troubleshooting.md
+  - API Reference:
+    - Core: api-reference/core.md
+    - Exporters: api-reference/exporters.md
+    - LLM: api-reference/llm.md
+  - Contributing:
+    - Development: contributing/development.md
+    - Testing: contributing/testing.md
+    - Release Process: contributing/release-process.md
+
+# Extra customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MarcusElwin
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/medium-converter/
+  version:
+    provider: mike

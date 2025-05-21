@@ -1,0 +1,39 @@
+name: Semantic Release
+on:
+  workflow_call:
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+      PYPI_API_TOKEN:
+        required: true
+    outputs:
+      published:
+        value: ${{ jobs.release.outputs.published }}
+      version:
+        value: ${{ jobs.release.outputs.version }}
+      git-ref:
+        value: ${{ jobs.release.outputs.git-ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
+    outputs:
+      published: ${{ steps.semantic.outputs.released }}
+      version: ${{ steps.semantic.outputs.version }}
+      git-ref: ${{ steps.semantic.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python Semantic Release
+        uses: python-semantic-release/python-semantic-release@master
+        id: semantic
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pypi_token: ${{ secrets.PYPI_API_TOKEN }}
