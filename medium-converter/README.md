@@ -4,6 +4,9 @@
 [![Python versions](https://img.shields.io/pypi/pyversions/medium-converter.svg)](https://pypi.org/project/medium-converter/)
 [![License](https://img.shields.io/github/license/MarcusElwin/medium-converter.svg)](https://github.com/MarcusElwin/medium-converter/blob/main/LICENSE)
 [![Documentation Status](https://readthedocs.org/projects/medium-converter/badge/?version=latest)](https://medium-converter.readthedocs.io/)
+[![Tests](https://github.com/MarcusElwin/medium-converter/actions/workflows/pull-request.yml/badge.svg)](https://github.com/MarcusElwin/medium-converter/actions/workflows/pull-request.yml)
+[![Release](https://github.com/MarcusElwin/medium-converter/actions/workflows/release.yml/badge.svg)](https://github.com/MarcusElwin/medium-converter/actions/workflows/release.yml)
+[![Docs](https://github.com/MarcusElwin/medium-converter/actions/workflows/docs.yml/badge.svg)](https://github.com/MarcusElwin/medium-converter/actions/workflows/docs.yml)
 
 **Convert Medium articles to various formats with optional LLM enhancement.**
 
