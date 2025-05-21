@@ -118,7 +118,7 @@ def convert(
     enhance: bool,
     use_cookies: bool,
     llm_provider: str | None,
-    verbose: bool
+    verbose: bool,
 ) -> None:
     """Convert a Medium article to the specified format.
 
@@ -269,7 +269,7 @@ def batch(
     enhance: bool,
     concurrent: int,
     use_cookies: bool,
-    llm_provider: str | None
+    llm_provider: str | None,
 ) -> None:
     """Convert multiple Medium articles listed in a file.
 

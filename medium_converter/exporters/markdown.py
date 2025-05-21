@@ -49,9 +49,9 @@ class MarkdownExporter(BaseExporter):
                     f.write(md_content)
             else:
                 # We need to check the type to avoid mypy errors
-                if hasattr(output, 'write') and callable(output.write):
+                if hasattr(output, "write") and callable(output.write):
                     if isinstance(output, BinaryIO):
-                        output.write(md_content.encode('utf-8'))
+                        output.write(md_content.encode("utf-8"))
                     else:
                         # Assume TextIO
                         output.write(md_content)
