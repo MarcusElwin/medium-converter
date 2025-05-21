@@ -81,7 +81,7 @@ class MarkdownExporter(BaseExporter):
 
             for i, item in enumerate(items):
                 if list_type == "ordered":
-                    result += f"{i+1}. {item}\n"
+                    result += f"{i + 1}. {item}\n"
                 else:
                     result += f"- {item}\n"
 
