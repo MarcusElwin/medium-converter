@@ -1,6 +1,6 @@
 """Authentication utilities for Medium."""
 
-import browser_cookie3  # type: ignore # missing stubs
+import browser_cookie3
 
 
 def get_medium_cookies() -> dict[str, str]:
