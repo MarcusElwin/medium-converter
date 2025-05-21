@@ -81,11 +81,12 @@ word = ["python-docx"]
 latex = ["jinja2"]
 epub = ["ebooklib"]
 html = ["jinja2"]
+docs = ["mkdocs", "mkdocs-material", "mkdocstrings[python]"]
 all-formats = ["reportlab", "python-docx", "jinja2", "ebooklib"]
 all-llm = ["litellm", "tiktoken", "openai", "anthropic", "google-generativeai", "mistralai", "llama-cpp-python"]
 fast = []  # "medium-converter-rust" dependency removed temporarily
 all = ["litellm", "tiktoken", "openai", "anthropic", "google-generativeai", "mistralai", "llama-cpp-python", 
-       "reportlab", "python-docx", "jinja2", "ebooklib"]
+       "reportlab", "python-docx", "jinja2", "ebooklib", "mkdocs", "mkdocs-material", "mkdocstrings[python]"]
 
 [tool.poetry.scripts]
 medium = "medium_converter.cli:main"

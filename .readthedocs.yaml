@@ -1,0 +1,18 @@
+# Root level .readthedocs.yaml - redirects to the actual package directory
+# This file informs Read the Docs that the documentation is in the subdirectory
+
+version: 2
+
+submodules:
+  include: all
+
+python:
+  install:
+    - method: pip
+      path: medium-converter/
+      extra_requirements:
+        - docs
+
+# Build documentation in the medium-converter/docs/ directory with MkDocs
+mkdocs:
+  configuration: medium-converter/mkdocs.yml

@@ -63,6 +63,21 @@ pip install medium-converter[llm,openai]
 pip install medium-converter[all]
 ```
 
+## Command Line Interface
+
+Medium Converter provides a beautiful command-line interface with emojis and colors:
+
+```bash
+# Basic conversion
+medium convert https://medium.com/example-article
+
+# Convert to PDF with enhancement
+medium convert https://medium.com/example-article -f pdf --enhance
+
+# Batch processing
+medium batch articles.txt -d ./output-dir
+```
+
 ## Quick Links
 
 - [Installation guide](getting-started/installation.md)
