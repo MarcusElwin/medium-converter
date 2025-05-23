@@ -36,4 +36,3 @@ jobs:
         id: semantic
         with:
           github_token: ${{ secrets.DEP_GITHUB_TOKEN }}
-          pypi_token: ${{ secrets.PYPI_API_TOKEN }}
