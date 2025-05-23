@@ -8,6 +8,9 @@ on:
 jobs:
   semantic-release:
     uses: ./.github/workflows/semver.yml
+    permissions:
+      contents: write
+      id-token: write
     secrets:
       DEP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
@@ -44,6 +47,8 @@ jobs:
     needs: semantic-release
     if: needs.semantic-release.outputs.published == 'true'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
