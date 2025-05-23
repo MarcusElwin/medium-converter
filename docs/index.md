@@ -2,16 +2,16 @@
 
 <div class="grid cards" markdown>
 
-- :material-book-outline: **Simple to use**  
+- [:material-book-outline:]{.lg .middle} **Simple to use**  
   Convert Medium articles to various formats with minimal configuration
 
-- :material-text-box-outline: **Multiple formats**  
+- [:material-text-box-outline:]{.lg .middle} **Multiple formats**  
   Export to Markdown, PDF, HTML, EPUB, LaTeX, and DOCX
 
-- :material-robot-outline: **LLM enhancement**  
+- [:material-robot-outline:]{.lg .middle} **LLM enhancement**  
   Improve article text with AI-powered grammar and clarity improvements
 
-- :material-lock-open-outline: **Paywall access**  
+- [:material-lock-open-outline:]{.lg .middle} **Paywall access**  
   Use your browser cookies to access articles behind the paywall 
 
 </div>
@@ -38,11 +38,11 @@ if __name__ == "__main__":
 
 ## Key Features
 
-- **📑 Multiple export formats**: Convert to Markdown, PDF, HTML, EPUB, LaTeX, and DOCX
-- **🤖 LLM enhancement**: Improve clarity and fix grammar with AI
-- **🔓 Paywall access**: Use your browser cookies to access articles behind the paywall
-- **⚡ Async processing**: Convert multiple articles in parallel
-- **📱 Cross-platform**: Works on Windows, macOS, and Linux
+- **:material-file-multiple-outline: Multiple export formats**: Convert to Markdown, PDF, HTML, EPUB, LaTeX, and DOCX
+- **:material-robot-outline: LLM enhancement**: Improve clarity and fix grammar with AI
+- **:material-lock-open-outline: Paywall access**: Use your browser cookies to access articles behind the paywall
+- **:material-lightning-bolt-outline: Async processing**: Convert multiple articles in parallel
+- **:material-laptop-outline: Cross-platform**: Works on Windows, macOS, and Linux
 
 ## Installation
 

@@ -1,9 +1,14 @@
 name: Release
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
       - main
+    paths:
+      - 'medium_converter/__init__.py'  # Only trigger on version changes
+  workflow_dispatch:
+    # Allow manual triggering
 
 jobs:
   semantic-release:
