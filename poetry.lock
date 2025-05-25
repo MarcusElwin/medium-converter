@@ -3530,6 +3530,31 @@ slack = ["slack-sdk"]
 telegram = ["requests"]
 
 [[package]]
+name = "types-beautifulsoup4"
+version = "4.12.0.20250516"
+description = "Typing stubs for beautifulsoup4"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "types_beautifulsoup4-4.12.0.20250516-py3-none-any.whl", hash = "sha256:5923399d4a1ba9cc8f0096fe334cc732e130269541d66261bb42ab039c0376ee"},
+    {file = "types_beautifulsoup4-4.12.0.20250516.tar.gz", hash = "sha256:aa19dd73b33b70d6296adf92da8ab8a0c945c507e6fb7d5db553415cc77b417e"},
+]
+
+[package.dependencies]
+types-html5lib = "*"
+
+[[package]]
+name = "types-html5lib"
+version = "1.1.11.20250516"
+description = "Typing stubs for html5lib"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "types_html5lib-1.1.11.20250516-py3-none-any.whl", hash = "sha256:5e407b14b1bd2b9b1107cbd1e2e19d4a0c46d60febd231c7ab7313d7405663c1"},
+    {file = "types_html5lib-1.1.11.20250516.tar.gz", hash = "sha256:65043a6718c97f7d52567cc0cdf41efbfc33b1f92c6c0c5e19f60a7ec69ae720"},
+]
+
+[[package]]
 name = "types-setuptools"
 version = "80.8.0.20250521"
 description = "Typing stubs for setuptools"
@@ -3834,4 +3859,4 @@ word = ["python-docx"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<4.0"
-content-hash = "5d895f5289c1da45ce5baa5c06197daae6d15feb7ed3c622b53c5d53d08d0bb2"
+content-hash = "e83c6701c79ea646188b536b6f096d843f11359338416933098c4e418f6becfc"
