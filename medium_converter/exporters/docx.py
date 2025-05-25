@@ -1,12 +1,12 @@
 """DOCX exporter for Medium articles."""
 
-from typing import BinaryIO, TextIO
 import io
+from typing import BinaryIO, TextIO
 
 try:
     import docx
-    from docx.shared import Pt, Inches
     from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.shared import Inches, Pt
 
     HAS_DOCX = True
 except ImportError:

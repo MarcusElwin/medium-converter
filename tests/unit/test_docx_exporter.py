@@ -1,8 +1,9 @@
 """Tests for the DOCX exporter."""
 
-import pytest
 import io
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
+
+import pytest
 
 from medium_converter.core.models import Article, ContentBlock, ContentType, Section
 from medium_converter.exporters.docx import DocxExporter
