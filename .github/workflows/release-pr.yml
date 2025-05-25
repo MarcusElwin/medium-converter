@@ -69,6 +69,9 @@ jobs:
           VERSION_FILE="medium_converter/__init__.py"
           sed -i 's/__version__ = ".*"/__version__ = "${{ env.NEXT_VERSION }}"/' $VERSION_FILE
           
+          # Also update version in pyproject.toml
+          sed -i 's/version = ".*"/version = "${{ env.NEXT_VERSION }}"/' pyproject.toml
+          
       - name: Generate changelog
         run: |
           pip install python-semantic-release
