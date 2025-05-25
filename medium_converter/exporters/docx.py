@@ -19,7 +19,7 @@ from .base import BaseExporter
 class DocxExporter(BaseExporter):
     """Export Medium articles to DOCX format."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the DOCX exporter."""
         if not HAS_DOCX:
             raise ImportError(
@@ -35,7 +35,8 @@ class DocxExporter(BaseExporter):
 
         Args:
             article: The article to export
-            output: Optional output file path or file-like object
+            output: Optional output file path or file-like object.
+                   Note: If TextIO is provided, binary data will be decoded to UTF-8.
 
         Returns:
             The exported content as bytes
@@ -94,12 +95,21 @@ class DocxExporter(BaseExporter):
             else:
                 # If it's a file-like object
                 if hasattr(output, "write") and callable(output.write):
-                    output.write(doc_bytes.read())
+                    data = doc_bytes.read()
+                    if isinstance(output, BinaryIO):
+                        output.write(data)
+                    else:
+                        # For TextIO, decode binary data
+                        # Required for BaseExporter compatibility
+                        # Deliberate edge case handling
+                        output.write(
+                            data.decode("utf-8", errors="replace")
+                        )  # type: ignore[arg-type]
                     doc_bytes.seek(0)  # Reset for the return value
 
         return doc_bytes.read()
 
-    def _format_block(self, doc, block: ContentBlock) -> None:
+    def _format_block(self, doc: "docx.Document", block: ContentBlock) -> None:
         """Format a content block in DOCX format.
 
         Args:

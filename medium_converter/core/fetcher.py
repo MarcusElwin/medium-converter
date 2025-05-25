@@ -16,4 +16,5 @@ async def fetch_article(url: str, cookies: dict[str, str] | None = None) -> str:
     async with httpx.AsyncClient(follow_redirects=True, cookies=cookies) as client:
         response = await client.get(url)
         response.raise_for_status()
-        return response.text
+        result: str = response.text
+        return result
