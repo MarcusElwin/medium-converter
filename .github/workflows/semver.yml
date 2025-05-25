@@ -30,6 +30,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.DEP_GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.merge_commit_sha || github.sha }}
 
       - name: Python Semantic Release
         uses: python-semantic-release/python-semantic-release@master
@@ -39,3 +40,5 @@ jobs:
           force: true # Force tag creation
           push: false # Don't push changes directly to main
           tag: true   # Create tags
+          commit: false # Don't commit version changes
+          build: true # Build the package
