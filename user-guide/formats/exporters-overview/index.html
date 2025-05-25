@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://medium-converter.readthedocs.io/user-guide/formats/pdf/">
+        <link rel="canonical" href="https://medium-converter.readthedocs.io/user-guide/formats/exporters-overview/">
       
       
-        <link rel="prev" href="../markdown/">
+        <link rel="prev" href="../../auth/">
       
       
-        <link rel="next" href="../docx/">
+        <link rel="next" href="../markdown/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>PDF - Medium Converter</title>
+        <title>Overview - Medium Converter</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pdf-export" class="md-skip">
+        <a href="#exporters-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PDF
+              Overview
             
           </span>
         </div>
@@ -701,10 +701,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../exporters-overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -715,6 +737,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-exporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Exporters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-exporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Exporters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Exporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-custom-exporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Custom Exporters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-specific-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format-Specific Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -747,32 +867,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    PDF
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pdf/" class="md-nav__link">
         
   
   
@@ -783,128 +881,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#command-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Line
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customization-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customization Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Customization Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#command-line_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Line
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-api_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-styling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom Styling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pdf-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      PDF Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementation Details
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1486,22 +1462,31 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#available-exporters" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Available Exporters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
+  <a href="#installing-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Usage
+      Installing Dependencies
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Basic Usage">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-exporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Exporters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Exporters">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1528,60 +1513,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#customization-options" class="md-nav__link">
+  <a href="#creating-custom-exporters" class="md-nav__link">
     <span class="md-ellipsis">
-      Customization Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Customization Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#command-line_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Line
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-api_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-styling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom Styling
+      Creating Custom Exporters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pdf-features" class="md-nav__link">
+  <a href="#common-features" class="md-nav__link">
     <span class="md-ellipsis">
-      PDF Features
+      Common Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
+  <a href="#format-specific-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Implementation Details
+      Format-Specific Features
     </span>
   </a>
   
@@ -1606,184 +1558,168 @@
   
 
 
-<h1 id="pdf-export">PDF Export<a class="headerlink" href="#pdf-export" title="Permanent link">&para;</a></h1>
-<p>Medium Converter can export articles to PDF, creating professionally formatted documents that are ready for printing or sharing.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>PDF export requires additional dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>pdf<span class="o">]</span>
-</code></pre></div>
-<p>Or if installing everything:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>all<span class="o">]</span>
-</code></pre></div>
-<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
-<h3 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Convert to PDF</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>medium<span class="w"> </span>convert<span class="w"> </span>https://medium.com/example-article<span class="w"> </span>-f<span class="w"> </span>pdf<span class="w"> </span>-o<span class="w"> </span>article.pdf
-</code></pre></div>
-<h3 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">medium_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert_article</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.pdf&quot;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">)</span>
-</code></pre></div>
-<h2 id="customization-options">Customization Options<a class="headerlink" href="#customization-options" title="Permanent link">&para;</a></h2>
-<p>PDF export supports various customization options:</p>
+<h1 id="exporters-overview">Exporters Overview<a class="headerlink" href="#exporters-overview" title="Permanent link">&para;</a></h1>
+<p>Medium Converter provides a variety of exporters to convert articles into different formats. Each exporter is specialized for a specific output format and has its own features and requirements.</p>
+<h2 id="available-exporters">Available Exporters<a class="headerlink" href="#available-exporters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Option</th>
+<th>Format</th>
 <th>Description</th>
-<th>Default</th>
+<th>File Extension</th>
+<th>Dependencies</th>
+<th>Package Extra</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>page_size</code></td>
-<td>Page size (A4, Letter, etc.)</td>
-<td><code>"A4"</code></td>
+<td>Markdown</td>
+<td>Plain text format with lightweight markup</td>
+<td>.md</td>
+<td>None (built-in)</td>
+<td>-</td>
 </tr>
 <tr>
-<td><code>font_size</code></td>
-<td>Base font size in points</td>
-<td><code>11</code></td>
+<td>PDF</td>
+<td>Portable Document Format for high-quality prints</td>
+<td>.pdf</td>
+<td>reportlab</td>
+<td>pdf</td>
 </tr>
 <tr>
-<td><code>font_family</code></td>
-<td>Font family for text</td>
-<td><code>"Helvetica"</code></td>
+<td>DOCX</td>
+<td>Microsoft Word document</td>
+<td>.docx</td>
+<td>python-docx</td>
+<td>word</td>
 </tr>
 <tr>
-<td><code>margins</code></td>
-<td>Page margins in inches</td>
-<td><code>{"top": 1, "right": 1, "bottom": 1, "left": 1}</code></td>
+<td>HTML</td>
+<td>Web page format with styling</td>
+<td>.html</td>
+<td>jinja2</td>
+<td>html</td>
 </tr>
 <tr>
-<td><code>include_toc</code></td>
-<td>Generate table of contents</td>
-<td><code>True</code></td>
+<td>LaTeX</td>
+<td>Professional typesetting system</td>
+<td>.tex</td>
+<td>jinja2</td>
+<td>latex</td>
 </tr>
 <tr>
-<td><code>include_cover</code></td>
-<td>Generate cover page</td>
-<td><code>True</code></td>
+<td>EPUB</td>
+<td>Electronic publication for e-readers</td>
+<td>.epub</td>
+<td>ebooklib</td>
+<td>epub</td>
 </tr>
 <tr>
-<td><code>include_images</code></td>
-<td>Include images in PDF</td>
-<td><code>True</code></td>
-</tr>
-<tr>
-<td><code>syntax_highlighting</code></td>
-<td>Enable syntax highlighting for code</td>
-<td><code>True</code></td>
-</tr>
-<tr>
-<td><code>header_text</code></td>
-<td>Custom header text</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>footer_text</code></td>
-<td>Custom footer text</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>page_numbers</code></td>
-<td>Include page numbers</td>
-<td><code>True</code></td>
+<td>Text</td>
+<td>Plain text without formatting</td>
+<td>.txt</td>
+<td>None (built-in)</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<h3 id="command-line_1">Command Line<a class="headerlink" href="#command-line_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>medium<span class="w"> </span>convert<span class="w"> </span>https://medium.com/example-article<span class="w"> </span>-f<span class="w"> </span>pdf<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--option<span class="w"> </span><span class="nv">page_size</span><span class="o">=</span>Letter<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--option<span class="w"> </span><span class="nv">font_size</span><span class="o">=</span><span class="m">12</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>--option<span class="w"> </span><span class="nv">include_cover</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--option<span class="w"> </span><span class="nv">header_text</span><span class="o">=</span><span class="s2">&quot;Medium Article&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span>--option<span class="w"> </span><span class="nv">footer_text</span><span class="o">=</span><span class="s2">&quot;Generated with Medium Converter&quot;</span>
+<h2 id="installing-dependencies">Installing Dependencies<a class="headerlink" href="#installing-dependencies" title="Permanent link">&para;</a></h2>
+<p>To use a specific exporter, you need to install the required dependencies. You can do this using the package extras:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># For a single format</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>pdf<span class="o">]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>word<span class="o">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># For multiple formats</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>pdf,word,html<span class="o">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># For all exporters</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>all-formats<span class="o">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># For all features (including LLM)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>pip<span class="w"> </span>install<span class="w"> </span>medium-converter<span class="o">[</span>all<span class="o">]</span>
 </code></pre></div>
-<h3 id="python-api_1">Python API<a class="headerlink" href="#python-api_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">export_options</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="s2">&quot;page_size&quot;</span><span class="p">:</span> <span class="s2">&quot;Letter&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="s2">&quot;font_size&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;Times-Roman&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="s2">&quot;include_cover&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="s2">&quot;header_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Medium Article&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="s2">&quot;footer_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Generated with Medium Converter&quot;</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="p">}</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">)</span>
+<h2 id="using-exporters">Using Exporters<a class="headerlink" href="#using-exporters" title="Permanent link">&para;</a></h2>
+<h3 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Convert using a specific format</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>medium<span class="w"> </span>convert<span class="w"> </span>https://medium.com/example-article<span class="w"> </span>-f<span class="w"> </span>markdown
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>medium<span class="w"> </span>convert<span class="w"> </span>https://medium.com/example-article<span class="w"> </span>-f<span class="w"> </span>pdf<span class="w"> </span>-o<span class="w"> </span>article.pdf
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>medium<span class="w"> </span>convert<span class="w"> </span>https://medium.com/example-article<span class="w"> </span>-f<span class="w"> </span>docx<span class="w"> </span>-o<span class="w"> </span>article.docx
 </code></pre></div>
-<h2 id="custom-styling">Custom Styling<a class="headerlink" href="#custom-styling" title="Permanent link">&para;</a></h2>
-<p>For advanced styling, you can provide a CSS stylesheet:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">custom_css</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="s2">@page {</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="s2">    @top-center {</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="s2">        content: &quot;Custom Header&quot;;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="s2">    }</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s2">    @bottom-center {</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s2">        content: &quot;Page &quot; counter(page);</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s2">    }</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="s2">}</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="s2">h1 {</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="s2">    color: #0066cc;</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="s2">    font-size: 24pt;</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="s2">}</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="s2">pre {</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="s2">    background-color: #f5f5f5;</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="s2">    padding: 10pt;</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="s2">    border-radius: 5pt;</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="s2">}</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="n">export_options</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        <span class="s2">&quot;custom_stylesheet&quot;</span><span class="p">:</span> <span class="n">custom_css</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    <span class="p">}</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="p">)</span>
+<h3 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">medium_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert_article</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1"># Convert to Markdown</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.md&quot;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="c1"># Convert to PDF</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.pdf&quot;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="c1"># Convert to DOCX</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;docx&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.docx&quot;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-<p>Or provide a stylesheet file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">await</span> <span class="n">convert_article</span><span class="p">(</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://medium.com/example-article&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;article.pdf&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">export_options</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="s2">&quot;stylesheet_path&quot;</span><span class="p">:</span> <span class="s2">&quot;path/to/custom.css&quot;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="p">}</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">)</span>
+<h2 id="creating-custom-exporters">Creating Custom Exporters<a class="headerlink" href="#creating-custom-exporters" title="Permanent link">&para;</a></h2>
+<p>You can create your own exporters by extending the <code>BaseExporter</code> class:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">medium_converter.exporters.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseExporter</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">medium_converter.core.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Article</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomExporter</span><span class="p">(</span><span class="n">BaseExporter</span><span class="p">):</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A custom exporter.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">article</span><span class="p">:</span> <span class="n">Article</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Export article to a custom format.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="c1"># Your implementation here</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">Author: </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="c1"># Add content</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="c1"># ...</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="c1"># Handle output</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="k">if</span> <span class="n">output</span><span class="p">:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        <span class="k">return</span> <span class="n">content</span>
 </code></pre></div>
-<h2 id="pdf-features">PDF Features<a class="headerlink" href="#pdf-features" title="Permanent link">&para;</a></h2>
-<p>The PDF exporter provides several features:</p>
-<ol>
-<li><strong>Cover Page</strong>: Title, author, date, and estimated reading time</li>
-<li><strong>Table of Contents</strong>: Automatically generated TOC with page numbers</li>
-<li><strong>Header and Footer</strong>: Customizable header and footer content</li>
-<li><strong>Syntax Highlighting</strong>: Code blocks with syntax highlighting</li>
-<li><strong>Hyperlinks</strong>: Active hyperlinks to websites and internal references</li>
-<li><strong>Images</strong>: Embedded images with captions</li>
-<li><strong>Math Rendering</strong>: LaTeX math formulas rendered properly</li>
-<li><strong>Bookmarks</strong>: PDF bookmarks for easy navigation</li>
-</ol>
-<h2 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h2>
-<p>Under the hood, Medium Converter uses ReportLab for PDF generation. The process involves:</p>
-<ol>
-<li>Parsing the article into a structured document</li>
-<li>Converting the content to ReportLab's flowable objects</li>
-<li>Applying styling and formatting</li>
-<li>Generating the PDF with proper layout</li>
-</ol>
-<p>For extremely complex layouts, consider using the LaTeX exporter and converting to PDF with a LaTeX processor.</p>
+<h2 id="common-features">Common Features<a class="headerlink" href="#common-features" title="Permanent link">&para;</a></h2>
+<p>All exporters support:</p>
+<ul>
+<li>Article metadata (title, author, date)</li>
+<li>Content formatting (headings, paragraphs, etc.)</li>
+<li>File output (to a file path or file-like object)</li>
+<li>Customizable output</li>
+</ul>
+<h2 id="format-specific-features">Format-Specific Features<a class="headerlink" href="#format-specific-features" title="Permanent link">&para;</a></h2>
+<p>Each format offers unique advantages:</p>
+<ul>
+<li><strong>Markdown</strong>: Lightweight, readable plain text</li>
+<li><strong>PDF</strong>: Professional printing quality with precise layout control</li>
+<li><strong>DOCX</strong>: Compatible with Microsoft Office and other word processors</li>
+<li><strong>HTML</strong>: Web compatibility with CSS styling</li>
+<li><strong>LaTeX</strong>: Academic publications with mathematical typesetting</li>
+<li><strong>EPUB</strong>: E-reader compatibility for digital books</li>
+<li><strong>Text</strong>: Maximum compatibility with any text editor</li>
+</ul>
+<p>See the individual format pages for more detailed information about each exporter.</p>
 
 
 
