@@ -2,11 +2,18 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/medium-converter.svg)](https://pypi.org/project/medium-converter/)
 [![Python versions](https://img.shields.io/pypi/pyversions/medium-converter.svg)](https://pypi.org/project/medium-converter/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/medium-converter.svg)](https://pypi.org/project/medium-converter/)
 [![License](https://img.shields.io/github/license/MarcusElwin/medium-converter.svg)](https://github.com/MarcusElwin/medium-converter/blob/main/LICENSE)
 [![Documentation Status](https://readthedocs.org/projects/medium-converter/badge/?version=latest)](https://medium-converter.readthedocs.io/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/badge/ruff-checked-brightgreen)](https://github.com/astral-sh/ruff)
+[![Mypy: checked](https://img.shields.io/badge/mypy-checked-blue)](https://github.com/python/mypy)
+[![codecov](https://codecov.io/gh/MarcusElwin/medium-converter/branch/main/graph/badge.svg)](https://codecov.io/gh/MarcusElwin/medium-converter)
+
 [![Tests](https://github.com/MarcusElwin/medium-converter/actions/workflows/pull-request.yml/badge.svg)](https://github.com/MarcusElwin/medium-converter/actions/workflows/pull-request.yml)
 [![Release](https://github.com/MarcusElwin/medium-converter/actions/workflows/release.yml/badge.svg)](https://github.com/MarcusElwin/medium-converter/actions/workflows/release.yml)
 [![Docs](https://github.com/MarcusElwin/medium-converter/actions/workflows/docs.yml/badge.svg)](https://github.com/MarcusElwin/medium-converter/actions/workflows/docs.yml)
+[![Semantic Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 **Convert Medium articles to various formats with optional LLM enhancement.**
 
