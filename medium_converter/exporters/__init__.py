@@ -5,6 +5,7 @@ from .markdown import MarkdownExporter
 
 try:
     from .docx import DocxExporter
+
     HAS_DOCX = True
 except ImportError:
     HAS_DOCX = False
