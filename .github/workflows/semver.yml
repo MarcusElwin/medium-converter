@@ -38,3 +38,4 @@ jobs:
           github_token: ${{ secrets.DEP_GITHUB_TOKEN }}
           force: true # Force tag creation
           push: false # Don't push changes directly to main
+          tag: true   # Create tags

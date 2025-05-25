@@ -69,15 +69,24 @@ jobs:
           VERSION_FILE="medium_converter/__init__.py"
           sed -i 's/__version__ = ".*"/__version__ = "${{ env.NEXT_VERSION }}"/' $VERSION_FILE
           
-      - name: Generate changelog
+          # Also update version in pyproject.toml
+          sed -i 's/version = ".*"/version = "${{ env.NEXT_VERSION }}"/' pyproject.toml
+          
+      - name: Generate changelog preview
         run: |
           pip install python-semantic-release
-          python -m semantic_release changelog --unreleased > CHANGELOG_LATEST.md
-          echo "Generated changelog for v${{ env.NEXT_VERSION }}"
+          echo "# Preview of changes for v${{ env.NEXT_VERSION }}" > CHANGELOG_LATEST.md
+          echo "" >> CHANGELOG_LATEST.md
+          echo "*Final changelog will be generated automatically by semantic-release*" >> CHANGELOG_LATEST.md
+          echo "" >> CHANGELOG_LATEST.md
+          echo "## Commits" >> CHANGELOG_LATEST.md
+          git log --pretty=format:"* %s (%h)" main..HEAD >> CHANGELOG_LATEST.md
+          echo "Generated changelog preview for v${{ env.NEXT_VERSION }}"
           
       - name: Commit changes
         run: |
           git add medium_converter/__init__.py
+          git add pyproject.toml
           git add CHANGELOG_LATEST.md || true
           git commit -m "chore(release): prepare v${{ env.NEXT_VERSION }}"
           

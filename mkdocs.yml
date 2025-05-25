@@ -91,8 +91,10 @@ nav:
     - Python API: user-guide/python-api.md
     - Authentication: user-guide/auth.md
     - Export Formats:
+      - Overview: user-guide/formats/exporters-overview.md
       - Markdown: user-guide/formats/markdown.md
       - PDF: user-guide/formats/pdf.md
+      - DOCX: user-guide/formats/docx.md
       - Other Formats: user-guide/formats/other-formats.md
     - LLM Enhancement:
       - Overview: user-guide/llm/overview.md
