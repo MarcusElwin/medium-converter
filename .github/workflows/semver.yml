@@ -37,7 +37,7 @@ jobs:
         id: semantic
         with:
           github_token: ${{ secrets.DEP_GITHUB_TOKEN }}
-          force: true # Force tag creation
+          # Remove force parameter as it needs to be one of: prerelease, patch, minor, major
           push: false # Don't push changes directly to main
           tag: true   # Create tags
           commit: false # Don't commit version changes
